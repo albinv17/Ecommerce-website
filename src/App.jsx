@@ -12,7 +12,7 @@ import Product from "./Pages/Product";
 function App() {
   return (
     <ShopContextProvider>
-      <HashRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -24,7 +24,7 @@ function App() {
             <Route path="product/:id" element={<Product />} />
           </Route>
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </ShopContextProvider>
   );
 }
