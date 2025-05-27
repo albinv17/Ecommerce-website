@@ -2,6 +2,8 @@ import { useContext } from "react";
 import "./styles.css";
 import { Link, Outlet } from "react-router-dom";
 import { ShopContext } from "./ShopContextProvider";
+import logoimg from "./Assets/logo.png";
+import cartimg from "./Assets/logo2.png";
 
 const Layout = () => {
   const { cart } = useContext(ShopContext);
@@ -12,7 +14,7 @@ const Layout = () => {
       <div className="header nova-square-regular">
         <div className="sitelogo">
           <Link to={"/"}>
-            <img className="logo" src="src\Pages\Assets\logo.png"></img>
+            <img className="logo" src={logoimg}></img>
           </Link>
         </div>
         <div className="navbar">
@@ -41,7 +43,7 @@ const Layout = () => {
         </div>
         <div className="cartarea">
           <Link className="link" to={"/cart"}>
-            <img className="logo" src="src\Pages\Assets\logo2.png"></img>
+            <img className="logo" src={cartimg}></img>
             {totitems != 0 ? (
               <span class="badge badge-warning" id="lblCartCount">
                 {totitems}
