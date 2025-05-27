@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, HashRouter } from "react-router-dom";
 import Home from "./Pages/Home";
 import Cart from "./Pages/Cart";
 import Layout from "./Pages/Layout";
@@ -12,7 +12,7 @@ import Product from "./Pages/Product";
 function App() {
   return (
     <ShopContextProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -24,7 +24,7 @@ function App() {
             <Route path="product/:id" element={<Product />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </ShopContextProvider>
   );
 }
